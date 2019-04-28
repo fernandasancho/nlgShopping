@@ -1,0 +1,135 @@
+{{!-- Carousel Wrapper --}}
+  <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+    {{!-- Indicators --}}
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+      <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+    </ol>
+    {{!-- Indicators ends --}}
+    {{!-- Slides --}}
+    <div class="carousel-inner" role="listbox">
+     {{!-- First slide --}}
+      <div class="carousel-item active">
+        <div class="view " style="background-image: url('/images/banner/banneroffice.png'); ">
+          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+          </div>
+        </div>
+      </div>
+      {{!-- First slide ends --}}
+      {{!-- Second slide --}}
+      <div class="carousel-item">
+        <div class="view" style="background-image: url('/images/banner/bannermac.png'); ">
+          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+          </div>
+        </div>
+      </div>
+      {{!-- Second slide ends --}}
+     {{!-- Third slide- --}}
+      <div class="carousel-item">
+        <div class="view" style="background-image: url('/images/banner/banner4.png'); ">
+          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+          </div>
+        </div>
+      </div>
+      {{!-- Third slide ends --}}
+    </div>
+   {{!-- Slides ends --}}
+
+    <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  {{!-- Carousel Wrapper ends--}}
+
+
+ {{!-- Main layout --}}
+  <main>
+    <div class="container">
+      {{!-- Navbar2 starts --}}
+      <nav class="navbar navbar-expand-lg navbar-dark red mt-3 mb-5">
+        <span class="navbar-brand">Categories:</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+          aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+         {{!--  Links starts --}}
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">All
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Computer &amp; Tablets</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Phones &amp; GPS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Photos &amp; Videos</a>
+            </li>
+          </ul>
+         {{!-- Links ends --}}
+
+          <form class="form-inline">
+            <div class="md-form my-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </div>
+          </form>
+        </div>
+        </nav>
+      {{!-- Navbar2 ends --}}
+
+
+
+{{# each products }}
+  {{!-- Section: Products --}}
+      <section class="text-center mb-4">
+        <div class="row wow fadeIn">
+          {{# each this}}
+          <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
+            <div class="card">
+              <div class="view overlay"> 
+                <img src="{{ this.imagePath }}" class="card-img-top"
+                  alt="">
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              {{!-- Card content starts --}}
+              <div class="card-body text-center">
+              
+                {{!-- Category & Title --}}
+                <strong> 
+                  <a href="" class="black-text">
+                  <h5>{{ this.title}}</h5>
+                </strong>
+                
+                </a>
+                <h5>
+                  <strong>
+                    <a href="" class="dark-grey-text">{{ this.description }} </a>
+                  </strong>
+                </h5>
+                <h4 class="font-weight-bold black-text">
+                  <strong>$ {{ this.price }}</strong>
+                </h4>
+                  <a href="/add-to-cart/{{ this._id }}" class="btn btn-warning" role="button"><b>Buy </b><i class="fas fa-shopping-cart"></i>
+                  </a>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+          {{!-- Grid row ends --}}
+         </div>
+      </section>  
+    {{/each}}     
+  </main>
+  

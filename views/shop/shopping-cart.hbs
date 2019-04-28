@@ -1,0 +1,70 @@
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading"><img src="/images/logo/my-noel-leeming.svg"></h1>
+     </div>
+</section>
+ 
+<div class="container mb-4 wow fadeIn">
+    {{# if this.products }}    
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead class= "headerprice">
+                        <tr>
+                            <th scope="col"> </th>
+                            <th scope="col">Product</th>
+                            <th scope="col" class="text-left">Quantity</th>
+                            <th scope="col" class="text-right">Price</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {{#each products}}
+                            <td><img src= {{ this.imagePath }}></td>
+                            <td>{{this.item.title}}</td>
+                            <td> {{ this.qty }}</td>
+                            <td class="text-right">$ {{this.price}} </td>
+                            <span> </span> <span> </span> <span> </span>
+                            <td class="text-right"><a class="btn btn-sm btn-warning" href="/reduce/{{this.item._id}}">Reduce</i></td>
+                        </tr>
+                        {{/each}}
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class= "headerprice"><strong>Total</strong></td>
+                            <td class="headerprice text-right"><strong>$ {{totalPrice}} </strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="col mb-2">
+            <div class="row">
+                    <div class="col-sm-12 col-md-6 "></div>
+                    <a href="/checkout" class="btn btn-danger wow fadeIn">Checkout</a>
+                    <a href="/" class="btn btn-warning wow fadeIn">Continue Shopping</a>
+                    </div>
+                    
+                {{ else }}
+            <section class="jumbotron text-center">
+                <div class="container">
+                    <div class="col-sm-12 col-md-6 text-center"></div>
+                        <h2 class="dark-grey-text"><b>Your shopping bag is empty.</b></h2>
+                        <h4> Start exploring..</h4>
+                    <div class="wow fadeIn">
+                    <img class="commerce responsive" src="/images/core-img/commerce.svg" class="card-img-top"></div>
+                    <button><a href="/" class="btn btn-danger wow fadeIn">Start Shopping</a></button>
+                    </div>
+                    </div>  
+            </section>
+                </div>          
+        </div>
+    </div>
+</div>
+{{/if}}

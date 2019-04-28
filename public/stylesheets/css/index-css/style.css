@@ -1,0 +1,56 @@
+/* Nav Bar */
+
+.navbar {
+  background-color: #e20612 !important;
+  }
+
+/* Required height of parents of the Half Page Carousel for proper displaying carousel itself */
+html,
+body,
+.view {
+  height: 100%;
+  background-repeat: no-repeat; 
+  background-size: cover; }
+
+/* Half Page Carousel itself*/
+.carousel {
+  height: 55%;
+
+ }
+  .carousel .carousel-inner {
+    height: 100%; }
+    .carousel .carousel-inner .carousel-item,
+    .carousel .carousel-inner .active {
+      height: 100%; 
+
+    }
+
+/* Adjustment for mobile devices*/
+@media (max-width: 776px) {
+  .carousel {
+    height: 100%; } }
+
+
+
+/* Sign Up - Sign InPage */
+   .signup {
+    padding-top: 90px;
+    background-color: #f5f5f5;
+    height: 100%;
+    width: 100%;
+  }
+
+/* Shopping Cart */
+  .headerprice {
+    color: #e20612 !important;
+    font-size: 120% !important;
+    font-family: "Roboto", sans-serif;
+  }
+  
+/* Empty shopping cart */
+  .commerce {
+    width: 200px;
+    height: auto;
+    padding-bottom: 20px;
+}
+

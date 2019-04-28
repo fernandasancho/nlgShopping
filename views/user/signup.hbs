@@ -1,0 +1,35 @@
+<div class="signup">
+<div class="container-fluid py-3">
+
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card card-body">
+        <h3 class="text-center mb-4"><b><img src="/images/logo/my-noel-leeming.svg"></b></h3>
+          <h2 class= "dark-grey-text d-flex justify-content-center">Sign Up</h2>
+          
+      <fieldset>
+        {{#if hasErrors}} 
+              <div class="alert alert-danger">
+                {{# each messages }}
+                  <p>{{ this }}</p>
+                {{/each}}
+              </div>
+          {{/if}}
+        <form action="/user/signup" method="post">
+    <div class="form-group has-error">
+     <input class="form-control input-lg" placeholder="E-mail Address" name="email" type="text">
+    </div>
+    <div class="form-group has-success">
+      <input class="form-control input-lg" placeholder="Password" name="password" value="" type="password">
+    </div>
+    <div class="text-center">
+      <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+        <button type="button submit" class="btn btn-md btn-warning">Join Now</button>
+    </div>
+        </form>
+      </fieldset>
+  </div>
+    </div>
+      </div>
+</div>
+</div>

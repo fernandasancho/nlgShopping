@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-dark justify-content-center sticky-top ">
+    <a class="navbar-brand" href="/"><img src="/images/logo/noelleeming.svg" width="200" height="70" alt="Noel Leeming">
+    </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><li class="nav-item dropdown justify-content-center">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b>Products</b>
+                <span class="sr-only">(current)</span></a></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Computers &amp; Tablets</a>
+                <a class="dropdown-item" href="#">Phones &amp; GPS</a>
+                <a class="dropdown-item" href="#">Televisions</a>
+                <a class="dropdown-item" href="#">Audios</a>
+                <a class="dropdown-item" href="#">Kitchen Appliances</a>
+                <a class="dropdown-item" href="#">Household Appliances</a>
+            </li>
+
+            <li class="nav-item dropdown justify-content-center">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b>Brands</b>
+                </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Apple</a>
+                <a class="dropdown-item" href="#">Electrolux</a>
+                <a class="dropdown-item" href="#">Fitbit</a>
+                <a class="dropdown-item" href="#">Samsung</a>
+                <a class="dropdown-item" href="#">Simpson</a>
+                <a class="dropdown-item" href="#">Nespresso</a>
+            </li>
+
+            <li class="nav-item dropdown justify-content-center">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b>Services</b>
+                </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Get set up</a>
+                <a class="dropdown-item" href="#">Get advice</a>
+                <a class="dropdown-item" href="#">Get it fixed</a>
+                <a class="dropdown-item" href="#">Get support</a>
+            </li>
+
+            <li class="nav-item dropdown justify-content-right">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b>My account</b>
+                </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {{# if login }}
+                <a class="dropdown-item" href="/user/profile"></i> User Account</a>
+                <a class="dropdown-item" href="/user/logout"></i> Logout</a></li>   
+
+                    {{ else }}
+                        <a class="dropdown-item" href="/user/signup"></i>Sign Up</a>
+                        <a class="dropdown-item" href="/user/signin"></i>Sign In</a></li>
+            {{/if}} 
+
+            <li class="nav-item">
+                <a class="nav-link" href="/shopping-cart/"><i class="fas fa-shopping-bag"></i><b> Shopping Cart</b>
+                <span class="badge"> {{session.cart.totalQty}}</span>
+                </a>
+            </li>
+    </ul>
+<form class="form-inline my-2 my-lg-0" action ="/search/{{this.item._id}}" method ="GET">
+<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+</form>
+    </div>
+</nav>
