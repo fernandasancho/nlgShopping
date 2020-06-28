@@ -1,5 +1,5 @@
 # nlgShopping
-<h1> This project is incompleted. It is using the following technology stack:</h1>
+<h1> This project is not yet completed. It uses the following technology stack:</h1>
 
 <ul>
 <li> Node.js Runtime Environment </li>
