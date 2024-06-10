@@ -1,4 +1,4 @@
-# nlgShopping 2019
+# EcommerceNodejsProject 2019
 <h1> This project is not yet completed. It uses the following technology stack:</h1>
 
 <ul>
